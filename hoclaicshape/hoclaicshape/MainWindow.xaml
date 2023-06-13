@@ -1,0 +1,36 @@
+﻿<Window x:Class="hoclaicshape.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hoclaicshape"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="window_load">
+    <Grid RenderTransformOrigin="0.495,0.517">
+        <Label Content="Mã Sản phẩm : " HorizontalAlignment="Left" Margin="70,33,0,0" VerticalAlignment="Top" Width="112" Height="35" RenderTransformOrigin="0.518,-0.713"/>
+        <Label Content="Tên sản phẩm : " HorizontalAlignment="Left" Margin="68,68,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="TXTMaSP" HorizontalAlignment="Left" Margin="165,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347"/>
+        <TextBox Name="TXTTenSP" HorizontalAlignment="Left" Margin="165,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347"/>
+        <DataGrid SelectedCellsChanged="select_item" Name="DSXuat" AutoGenerateColumns="False" Margin="70,197,34,65">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding MaSp}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding TenSp}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tên Loại" Binding="{Binding TenLoai}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Số lượng" Binding="{Binding SoLuong}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Đơn giá" Binding="{Binding DonGia}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Thêm" HorizontalAlignment="Left" Margin="186,375,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Sửa" HorizontalAlignment="Left" Margin="308,374,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Xóa" HorizontalAlignment="Left" Margin="415,374,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Thoát" HorizontalAlignment="Left" Margin="526,375,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+        <Label Content="Loại Sản Phẩm :" HorizontalAlignment="Left" Margin="67,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Số lượng :" HorizontalAlignment="Left" Margin="70,125,0,0" VerticalAlignment="Top"/>
+        <Label Content="Đơn giá : " HorizontalAlignment="Left" Margin="67,156,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cbbLoaiSP" HorizontalAlignment="Left" Margin="165,101,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TXTSoLuong" HorizontalAlignment="Left" Margin="165,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" Height="28"/>
+        <TextBox Name="TXTDonGia" HorizontalAlignment="Left" Margin="165,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" TextChanged="TextBox_TextChanged" Height="22"/>
+
+    </Grid>
+</Window>
